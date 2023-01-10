@@ -20,3 +20,7 @@ Route::get('/signup', [WelcomeController::class, 'signup']);
 
 Route::post('/signin', [WelcomeController::class, 'authentication']);
 Route::post('/signup', [WelcomeController::class, 'store']);
+
+Route::get('/home', function () {
+    return view('homepage');
+});
