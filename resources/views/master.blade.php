@@ -16,9 +16,11 @@
     <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
             <div
-                class="navbar-collapse justify-content-center"
+                class="navbar-collapse"
                 id="master-navbar">
-                <ul class="navbar-nav">
+                <ul
+                    class="navbar-nav"
+                    id="master-navbar-nav">
                     <li class="nav-item">
                         <a
                             class="text-font-roboto text-color-white navbar-link"
@@ -38,6 +40,30 @@
                             class="text-font-roboto text-color-white navbar-link"
                             href="">
                             VIEW ORDER
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div
+                class="navbar-collapse justify-content-center"
+                id="side-navbar">
+                <ul
+                    class="navbar-nav"
+                    id="side-navbar-nav">
+                    <li class="nav-item">
+                        <a
+                            class="text-font-roboto text-color-white navbar-link"
+                            href="">
+                            PROFILE
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="text-font-roboto text-color-white navbar-link"
+                            href="">
+                            SIGN OUT
                         </a>
                     </li>
                 </ul>

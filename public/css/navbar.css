@@ -1,5 +1,4 @@
 .navbar-nav {
-    width: 50vw;
     display: flex;
     justify-content: space-around;
     padding-top: 1em;
@@ -32,4 +31,12 @@
 
 .navbar-link:hover {
     color: #ffffff;
+}
+
+#master-navbar {
+    position: absolute;
+}
+
+#master-navbar-nav {
+    width: 50vw;
 }
