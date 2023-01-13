@@ -34,4 +34,13 @@
     </div>
 </div>
 
+<div
+    class="d-flex flex-wrap justify-content-center"
+    style="padding: 3vw">
+    <img
+        src="./images/upcoming_shows.png"
+        alt="UPCOMING SHOWS"
+        style="width: 30vw">
+</div>
+
 @endsection
