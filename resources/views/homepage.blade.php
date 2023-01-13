@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master_member')
 
 @section('title', 'Home')
 
