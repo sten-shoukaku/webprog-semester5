@@ -35,7 +35,8 @@
 @section('menu2-side')
 <form
     action="/logout"
-    method="POST">
+    method="POST"
+    style="display: contents">
     @csrf
     <button
         type="submit"

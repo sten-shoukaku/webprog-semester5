@@ -13,11 +13,25 @@
         src="./images/homepage_banner.jpg"
         alt=""
         style="width: 100vw">
-    <p
-        class="position-absolute"
-        id="ontick-logo">
-        O N T I C K
-    </p>
+    <div
+        class="d-flex position-absolute justify-content-center"
+        style="flex-direction: column">
+            <p
+                id="ontick-logo">
+                O N T I C K
+            </p>
+            <form
+                action=""
+                class="align-self-center"
+                method="GET">
+                <button
+                    type="submit"
+                    class="btn rounded-pill text-font-andika text-color-white"
+                    id="btn-view-upcoming">
+                    VIEW UPCOMING
+                </button>
+            </form>
+    </div>
 </div>
 
 @endsection

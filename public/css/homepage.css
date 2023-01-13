@@ -5,3 +5,13 @@
     color: #FFFFFF;
     text-shadow: 10px 10px 10px #A553E440;
 }
+
+#btn-view-upcoming {
+    width: 30vw;
+    background-color: #DF3599;
+}
+
+#btn-view-upcoming:hover {
+    background-color: #FFFFFF;
+    color: #DF3599;
+}
