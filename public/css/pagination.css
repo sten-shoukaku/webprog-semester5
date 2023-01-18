@@ -1,0 +1,13 @@
+.pagination {
+    --bs-pagination-color: #FFFFFF;
+    --bs-pagination-bg: rgba(0, 0, 0, 0);
+    --bs-pagination-border-width: 0em;
+    --bs-pagination-hover-color: #DF3599;
+    --bs-pagination-hover-bg: rgba(0, 0, 0, 0);
+    --bs-pagination-focus-color: #DF3599;
+    --bs-pagination-focus-bg: rgba(0, 0, 0, 0);
+    --bs-pagination-focus-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    --bs-pagination-active-color: #DF3599;
+    --bs-pagination-active-bg: rgba(0, 0, 0, 0);
+    --bs-pagination-disabled-bg: rgba(0, 0, 0, 0);
+}

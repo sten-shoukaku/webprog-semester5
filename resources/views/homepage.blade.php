@@ -84,7 +84,9 @@
     @endforeach
 </div>
 
-<div class="d-flex justify-content-center">
+<div
+    class="d-flex justify-content-center"
+    style="margin-top: 4em; margin-bottom: 4em">
     {{ $events->withQueryString()->links() }}
 </div>
 
