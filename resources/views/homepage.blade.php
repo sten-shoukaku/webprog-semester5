@@ -43,4 +43,44 @@
         style="width: 30vw">
 </div>
 
+<div
+    class="d-flex flex-wrap justify-content-center">
+    @foreach (DB::table('events')->get() as $event)
+    <div
+        class="card m-4"
+        style="width: 30vw">
+        <img
+            class="card-img-top"
+            src={{$event->image}}
+            alt={{$event->name}}>
+        <div
+            class="card-body">
+            <div
+                style="height: 8em">
+                <h5
+                    class="card-title">
+                    {{$event->name}}
+                </h5>
+                <p
+                    class="text-font-roboto text-thin"
+                    style="font-size: 1em; margin: 0em">
+                    {{$event->location}}
+                </p>
+                <p
+                    class="text-font-roboto text-thin"
+                    style="font-size: 1em; margin: 0em">
+                    {{$event->date}}
+                </p>
+            </div>
+            <div>
+                <h5
+                    class="card-title">
+                    IDR {{number_format($event->price, 0, ',', '.')}}
+                </h5>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
+
 @endsection

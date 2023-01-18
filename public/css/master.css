@@ -16,6 +16,10 @@ body {
     font-weight: 400;
 }
 
+.text-thin {
+    font-weight: 200;
+}
+
 .text-font-andika {
     font-family: 'Andika', sans-serif;
     font-weight: 400;
