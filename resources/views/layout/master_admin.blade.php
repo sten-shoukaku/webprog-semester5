@@ -2,15 +2,15 @@
 
 @section('menu1-main')
 <a
-    class="navbar-link text-font-roboto text-color-white {{(request()->is('admin/home*')) ? 'active' : ''}}"
-    href="">
+    class="navbar-link text-font-roboto {{(request()->is('admin/home*')) ? 'active' : ''}}"
+    href="/home">
     HOME
 </a>
 @endsection
 
 @section('menu2-main')
 <a
-    class="navbar-link text-font-roboto text-color-white {{(request()->is('admin/event*')) ? 'active' : ''}}"
+    class="navbar-link text-font-roboto {{(request()->is('admin/event*')) ? 'active' : ''}}"
     href="">
     EVENT
 </a>
@@ -18,7 +18,7 @@
 
 @section('menu3-main')
 <a
-    class="navbar-link text-font-roboto text-color-white {{(request()->is('admin/order-history*')) ? 'active' : ''}}"
+    class="navbar-link text-font-roboto {{(request()->is('admin/order-history*')) ? 'active' : ''}}"
     href="">
     ADD EVENTS
 </a>
@@ -26,7 +26,7 @@
 
 @section('menu1-side')
 <a
-    class="navbar-link text-font-roboto text-color-white {{(request()->is('admin/profile*')) ? 'active' : ''}}"
+    class="navbar-link text-font-roboto {{(request()->is('admin/profile*')) ? 'active' : ''}}"
     href="">
     PROFILE
 </a>
