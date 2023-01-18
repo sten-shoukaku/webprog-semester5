@@ -2,7 +2,7 @@
 
 @section('menu1-main')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto text-color-white {{(request()->is('home*')) ? 'active' : ''}}"
     href="">
     HOME
 </a>
@@ -10,7 +10,7 @@
 
 @section('menu2-main')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto text-color-white {{(request()->is('event*')) ? 'active' : ''}}"
     href="">
     EVENT
 </a>
@@ -18,7 +18,7 @@
 
 @section('menu3-main')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto text-color-white {{(request()->is('order-history*')) ? 'active' : ''}}"
     href="">
     VIEW ORDER
 </a>
@@ -26,7 +26,7 @@
 
 @section('menu1-side')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto text-color-white {{(request()->is('profile*')) ? 'active' : ''}}"
     href="">
     PROFILE
 </a>

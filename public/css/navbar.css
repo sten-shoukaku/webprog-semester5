@@ -32,3 +32,13 @@
 .navbar-link:hover {
     color: #ffffff;
 }
+
+.active {
+    color: #DF3599;
+    text-decoration: underline;
+    text-decoration-thickness: 0.15em;
+}
+
+.btn-outline-light {
+    --bs-btn-hover-color: #DF3599;
+}
