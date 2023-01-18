@@ -46,9 +46,10 @@
 <div
     class="d-flex flex-wrap justify-content-center">
     @foreach (DB::table('events')->get() as $event)
-    <div
+    <a
+        href=""
         class="card m-4"
-        style="width: 30vw">
+        style="width: 30vw; text-decoration: none; color: #000000">
         <img
             class="card-img-top"
             src={{$event->image}}
@@ -79,7 +80,7 @@
                 </h5>
             </div>
         </div>
-    </div>
+    </a>
     @endforeach
 </div>
 
