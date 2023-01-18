@@ -45,7 +45,7 @@
 
 <div
     class="d-flex flex-wrap justify-content-center">
-    @foreach (DB::table('events')->get() as $event)
+    @foreach ($events as $event)
     <a
         href=""
         class="card m-4"
@@ -82,6 +82,10 @@
         </div>
     </a>
     @endforeach
+</div>
+
+<div class="d-flex justify-content-center">
+    {{ $events->withQueryString()->links() }}
 </div>
 
 @endsection
