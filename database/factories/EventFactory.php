@@ -20,6 +20,7 @@ class EventFactory extends Factory
             'price' => $this->faker->numberBetween(100000, 10000000),
             'date' => $this->faker->date('Y-m-d'),
             'time' => $this->faker->time('H:i'),
+            'open_gate' => $this->faker->time('H:i'),
             'duration' => $this->faker->numberBetween(1, 3),
             'venue' => $this->faker->words(3, True),
             'location' => $this->faker->word()

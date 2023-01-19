@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->integer('price');
             $table->date('date');
             $table->time('time');
+            $table->time('open_gate');
             $table->integer('duration');
             $table->string('venue');
             $table->string('location');
