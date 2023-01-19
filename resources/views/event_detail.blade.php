@@ -81,6 +81,15 @@
                     Section
                 </h2>
             </div>
+            @foreach ($sections as $section)
+                <div
+                    class="card">
+                    <p
+                        class="card-title">
+                        {{$section->name}}
+                    </p>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
