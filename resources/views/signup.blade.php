@@ -19,7 +19,6 @@
                             <h1 class="signin-text fw-semibold pb-3">Sign <span>up</span></h1>
                             <form action="/signup" method="POST" class="text-start px-4">
                                 @csrf
-    
                                 <div class="pb-2">
                                     <label for="email" class="signin-text pb-2">Email</label> <br>
                                     <input type="email" name="email" class="form-field px-3" id="email" value="">
@@ -27,16 +26,28 @@
                                 <div class="pb-2">
                                     <label for="password" class="signin-text pb-2">Password</label> <br>
                                     <input type="password" name="password" class="form-field px-3" id="password" value="" >
+                                    @error('password')
+                                        <div class="text-danger text-center">{{ $message }}</div>
+                                    @enderror
+     
                                 </div>
                                 <div class="pb-2">
                                     <label for="confirm-password" class="signin-text pb-2">Confirm Password</label> <br>
                                     <input type="password" name="confirm-password" class="form-field px-3" id="confirm-password" value="" >
+                                    @error('confirm-password')
+                                        <div class="text-danger text-center">{{ $message }}</div>
+                                    @enderror
+
                                 </div>
                                 <div class="pb-2">
                                     <label for="phone-number" class="signin-text pb-2">Phone Number</label> <br>
-                                    <input type="number" name="phone-number" class="form-field px-3" id="phone-number" value="">
+                                    <input type="text" name="phone-number" class="form-field px-3" id="phone-number" value="">
+                                    @error('phone-number')
+                                        <div class="text-danger text-center">{{ $message }}</div>
+                                    @enderror
+
                                 </div>
-    
+
                                 <div class="button-field signin-text py-3 pb-2">
                                     <button class="w-100 btn" type="submit" id="" name="submit">SUBMIT</button>
                                 </div>
