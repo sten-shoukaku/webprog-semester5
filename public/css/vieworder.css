@@ -1,0 +1,13 @@
+.section-title {
+    border-left: 0.5rem solid rgba(38, 84, 146, 0.5);
+    padding-left: 0.7rem;
+    padding-right: 1.2rem;
+    margin: 2rem 0rem 0.5rem 0rem;
+
+}
+
+.section-content {
+    padding: 0rem 0.5rem;
+    margin: 2rem 0rem;
+
+}
