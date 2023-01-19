@@ -1,4 +1,4 @@
-@extends('layout.master_member')
+@extends('layout.master_admin')
 
 <link rel="stylesheet" href="{{URL::asset('css/homepage.css')}}">
 

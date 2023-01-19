@@ -12,4 +12,9 @@ class HomepageController extends Controller
         $events = Event::Paginate(6);
         return view('homepage', compact('events'));
     }
+
+    public function index_admin() {
+        $events = Event::Paginate(6);
+        return view('homepage_admin', compact('events'));
+    }
 }

@@ -26,3 +26,5 @@ Route::post('/signup', [WelcomeController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 Route::get('/home', [HomepageController::class, 'index']);
+
+Route::get('/admin/home', [HomepageController::class, 'index_admin']);
