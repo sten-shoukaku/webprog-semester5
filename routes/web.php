@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
@@ -24,6 +25,4 @@ Route::post('/signup', [WelcomeController::class, 'store']);
 
 Route::post('/logout', [UserController::class, 'logout']);
 
-Route::get('/home', function () {
-    return view('homepage');
-});
+Route::get('/home', [HomepageController::class, 'index']);

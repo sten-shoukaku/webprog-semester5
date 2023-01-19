@@ -2,15 +2,15 @@
 
 @section('menu1-main')
 <a
-    class="navbar-link text-font-roboto text-color-white"
-    href="">
+    class="navbar-link text-font-roboto {{(request()->is('home*')) ? 'active' : ''}}"
+    href="/home">
     HOME
 </a>
 @endsection
 
 @section('menu2-main')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto {{(request()->is('event*')) ? 'active' : ''}}"
     href="">
     EVENT
 </a>
@@ -18,7 +18,7 @@
 
 @section('menu3-main')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto {{(request()->is('order-history*')) ? 'active' : ''}}"
     href="">
     VIEW ORDER
 </a>
@@ -26,7 +26,7 @@
 
 @section('menu1-side')
 <a
-    class="navbar-link text-font-roboto text-color-white"
+    class="navbar-link text-font-roboto {{(request()->is('profile*')) ? 'active' : ''}}"
     href="">
     PROFILE
 </a>
@@ -35,7 +35,8 @@
 @section('menu2-side')
 <form
     action="/logout"
-    method="POST">
+    method="POST"
+    style="display: contents">
     @csrf
     <button
         type="submit"
