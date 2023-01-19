@@ -4,6 +4,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,5 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/home', [HomepageController::class, 'index']);
 
 Route::get('/admin/home', [HomepageController::class, 'index_admin']);
+
+Route::get('/edit/event', [TicketController::class, 'edit']);
