@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="{{URL::asset('css/homepage.css')}}">
 
-@section('title', 'Home')
+@section('title', 'Edit Event')
 
 @section('content')
 

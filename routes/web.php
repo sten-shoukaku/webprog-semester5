@@ -31,3 +31,5 @@ Route::get('/home', [HomepageController::class, 'index']);
 Route::get('/admin/home', [HomepageController::class, 'index_admin']);
 
 Route::get('/edit/event', [TicketController::class, 'edit']);
+Route::get('/add/event', [TicketController::class, 'addevent']);
+Route::get('/add/section', [TicketController::class, 'addsection']);
