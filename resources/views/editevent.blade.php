@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="d-flex flex-wrap justify-content-center align-items-center" id="home-banner">
+<div class="d-flex flex-wrap justify-content-center align-items-center" id="home-banner" style="height: 225vh">
     <img src="{{URL::asset('./images/homepage_banner.jpg')}}" alt="" style="width: 100vw; opacity: 0;">
     <div class="card d-flex position-absolute justify-content-center" style="top: 15vh; max-width: 50vw">
         <img src="{{URL::asset('./images/event_template.png')}}" alt="UPCOMING SHOWS" class="card-img-top">
