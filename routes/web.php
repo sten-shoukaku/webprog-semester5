@@ -14,6 +14,8 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
+// test
+
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/signin', [WelcomeController::class, 'signin']);
 Route::get('/signup', [WelcomeController::class, 'signup']);
