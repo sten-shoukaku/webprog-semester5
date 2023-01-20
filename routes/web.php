@@ -19,6 +19,8 @@ use App\Http\Controllers\TicketController;
 |
 */
 
+// test
+
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/signin', [WelcomeController::class, 'signin']);
 Route::get('/signup', [WelcomeController::class, 'signup']);
