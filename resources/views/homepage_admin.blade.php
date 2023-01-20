@@ -1,4 +1,4 @@
-@extends('layout.master_member')
+@extends('layout.master_admin')
 
 <link rel="stylesheet" href="{{URL::asset('css/homepage.css')}}">
 
@@ -47,7 +47,7 @@
     class="d-flex flex-wrap justify-content-center">
     @foreach ($events as $event)
     <a
-        href="/event/{{$event->id}}"
+        href=""
         class="card m-4"
         style="width: 30vw; text-decoration: none; color: #000000">
         <img

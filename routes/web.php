@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventSectionController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +19,8 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
+// test
+
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/signin', [WelcomeController::class, 'signin']);
 Route::get('/signup', [WelcomeController::class, 'signup']);
@@ -24,6 +30,12 @@ Route::post('/signup', [WelcomeController::class, 'store']);
 
 Route::post('/logout', [WelcomeController::class, 'logout']);
 
-Route::get('/home', function () {
-    return view('homepage');
-});
+Route::get('/home', [HomepageController::class, 'index']);
+Route::get('/event/{id}', [EventController::class, 'event_detail']);
+Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
+
+Route::get('/admin/home', [HomepageController::class, 'index_admin']);
+
+Route::get('/edit/event', [TicketController::class, 'edit']);
+Route::get('/add/event', [TicketController::class, 'addevent']);
+Route::get('/add/section', [TicketController::class, 'addsection']);

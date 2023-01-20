@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+
 
 class WelcomeController extends Controller
 {
@@ -56,5 +59,6 @@ class WelcomeController extends Controller
         $dataValid['confirmPassword'] = Hash::make($dataValid['confirmPassword']);
         User::create($dataValid);
         return redirect('/signin')->with('success', 'Registration Success');
+
     }
 }
