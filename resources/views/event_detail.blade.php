@@ -83,11 +83,62 @@
             </div>
             @foreach ($sections as $section)
                 <div
-                    class="card">
-                    <p
-                        class="card-title">
-                        {{$section->name}}
-                    </p>
+                    class="card d-flex flex-wrap"
+                    style="margin-bottom: 1em; padding: 1em 1em 1em 2em; flex-direction: row; filter: drop-shadow(0em 0.1em 0.1em rgba(0, 0, 0, 0.25))">
+                    <div
+                        class="container-fluid"
+                        style="padding: 0em; width: 50%">
+                        <h5
+                            class="card-title text-font-roboto"
+                            style="font-size: 1em; margin-bottom: 1em">
+                            {{$section->name}}
+                        </h5>
+                        <h5
+                            class="card-title text-font-roboto"
+                            style="font-size: 1.2em; margin: auto">
+                            IDR {{number_format($section->price, 0, ',', '.')}}
+                        </h5>
+                    </div>
+                    <div
+                        class="container-fluid d-flex flex-wrap"
+                        style="padding: 0em; width: 50%; align-content: flex-end; justify-content: flex-end">
+                        <div
+                            style="display: flex; flex-wrap: wrap; flex-direction: row">
+                            @if ($section->stock == 0)
+                                <p
+                                    class="card-text text-font-roboto text-thin"
+                                    style="font-size: 0.8em; color: #555353; margin: auto">
+                                    Habis dipesan
+                                </p>
+                                <button
+                                    class="rounded-pill disabled btn-section-disabled text-font-roboto"
+                                    style="margin-left: 1em">
+                                    PILIH
+                                </button>
+                            @else
+                                @if ($section->stock < 10)
+                                    <p
+                                        class="card-text text-font-roboto text-thin"
+                                        style="font-size: 0.8em; color: #FF0000; margin: auto">
+                                        Tersisa {{$section->stock}} tiket
+                                    </p>
+                                @endif
+                                <form
+                                    action="/event/{{$event->id}}/order/{{$section->id}}"
+                                    method="POST"
+                                    style="margin: auto">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$section->id}}">
+                                    <button
+                                        class="rounded-pill btn-section text-font-roboto"
+                                        type="submit"
+                                        style="margin-left: 1em">
+                                        PILIH
+                                    </button>
+                                </form>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>

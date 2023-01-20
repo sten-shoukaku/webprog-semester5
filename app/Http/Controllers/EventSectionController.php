@@ -3,84 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\EventSection;
-use App\Http\Requests\StoreEventSectionRequest;
-use App\Http\Requests\UpdateEventSectionRequest;
+use App\Models\Event;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class EventSectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    public function order_section(Request $request){
+        $id = $request->id;
+        $section_id = $request->section_id;
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        $event = Event::find($id);
+        $event->date = Carbon::createFromFormat('Y-m-d', $event->date)->format('d F Y');
+        $event->time = Carbon::createFromFormat('H:i:s', $event->time)->format('h.i');
+        $event->open_gate = Carbon::createFromFormat('H:i:s', $event->open_gate)->format('h.i');
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreEventSectionRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreEventSectionRequest $request)
-    {
-        //
-    }
+        $section = EventSection::find($section_id);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\EventSection  $eventSection
-     * @return \Illuminate\Http\Response
-     */
-    public function show(EventSection $eventSection)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\EventSection  $eventSection
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(EventSection $eventSection)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateEventSectionRequest  $request
-     * @param  \App\Models\EventSection  $eventSection
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateEventSectionRequest $request, EventSection $eventSection)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\EventSection  $eventSection
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(EventSection $eventSection)
-    {
-        //
+        return view('order_section', compact('event', 'section'));
     }
 }

@@ -9,3 +9,17 @@
     padding: 2em;
     background: rgba(190, 203, 220, 0.5);
 }
+
+.btn-section-disabled, .btn-section-back {
+    color: #FFFFFF;
+    background-color: #555353;
+    width: 8em;
+    border: none;
+}
+
+.btn-section {
+    color: #FFFFFF;
+    background-color: #DF3599;
+    width: 8em;
+    border: none;
+}
