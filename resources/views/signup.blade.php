@@ -22,12 +22,18 @@
 
                                 <div class="pb-1">
                                     <label for="username" class="signin-text pb-2">Username</label> <br>
-                                    <input type="text" name="username" class="form-field px-3" id="username" value="">
+                                    <input type="text" name="username" class="form-field px-3 @error('username') is-invalid @enderror"
+                                    id="username" placeholder="username" required value="{{ old('username')}}">
+                                    @error('username')
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
+
+
+
                                 <div class="pb-1">
-
-
-
                                     <label for="email" class="signin-text pb-2">Email</label> <br>
                                     <input type="email" name="email" class="form-field px-3 @error('email') is-invalid @enderror"
                                     id="email" placeholder="name@example.com" required value="{{ old('email')}}">
@@ -64,7 +70,11 @@
                                     <label for="phone" class="signin-text pb-2">Phone Number</label> <br>
                                     <input type="number" name="phone" class="form-field px-3 @error('phone') is-invalid @enderror"
                                     id="phone"  placeholder="Phone Number" required value="{{ old('phone')}}">
-
+                                    @error('phone')
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="button-field signin-text py-3 pb-2">

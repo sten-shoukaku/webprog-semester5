@@ -50,6 +50,7 @@ class WelcomeController extends Controller
     public function store(Request $request) {
         # Validation
         $dataValid = $request->validate([
+            'username'=> 'required|min:3|max:20',
             'email'=> 'required|email:dns|unique:users',
             'password'=> 'required|min:5|max:20',
             'confirmPassword'=> 'required|min:5|max:20|same:password',
@@ -58,7 +59,7 @@ class WelcomeController extends Controller
         $dataValid['password'] = Hash::make($dataValid['password']);
         $dataValid['confirmPassword'] = Hash::make($dataValid['confirmPassword']);
         User::create($dataValid);
-        return redirect('/signin')->with('success', 'Registration Success');
+        return redirect('/signin')->with('success', 'Registration Success, Please Login');
 
     }
 }
