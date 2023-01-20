@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventSectionController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +29,8 @@ Route::post('/signup', [WelcomeController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 Route::get('/home', [HomepageController::class, 'index']);
+Route::get('/event/{id}', [EventController::class, 'event_detail']);
+Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
 
 Route::get('/admin/home', [HomepageController::class, 'index_admin']);
 
