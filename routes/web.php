@@ -28,7 +28,7 @@ Route::get('/signup', [WelcomeController::class, 'signup']);
 Route::post('/signin', [WelcomeController::class, 'authentication']);
 Route::post('/signup', [WelcomeController::class, 'store']);
 
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [WelcomeController::class, 'logout']);
 
 Route::get('/home', [HomepageController::class, 'index']);
 Route::get('/event/{id}', [EventController::class, 'event_detail']);
