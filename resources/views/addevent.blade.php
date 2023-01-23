@@ -27,12 +27,16 @@
                         <input type="text" name="eventLoc" class="form-field px-3" id="event-loc" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
                     </div>
                     <div class="pb-1">
+                        <label for="event-name" class="pb-2">Date</label> <br>
+                        <input type="date" name="eventDate" class="form-field px-3" id="event-date" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
+                    </div>
+                    <div class="pb-1">
                         <label for="event-desc" class="pb-2">Add Description</label> <br>
-                        <textarea name="eventDesc" cols="102" rows="5"></textarea>
+                        <textarea name="eventDesc" cols="134" rows="5"></textarea>
                     </div>
                     <div class="pb-1">
                         <label for="op-hour" class="pb-2">Opening Hours</label> <br>
-                        <textarea name="opHour" cols="102" rows="5"></textarea>
+                        <textarea name="opHour" cols="134" rows="5"></textarea>
                     </div>
                     <div class="pb-1">
                         <label for="section" class="pb-2">Add Section</label> <br>

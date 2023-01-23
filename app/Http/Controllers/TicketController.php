@@ -21,6 +21,7 @@ class TicketController extends Controller
             'banner' => 'required|mimes:jpg,png,jpeg',
             'eventName' => 'required',
             'eventLoc'=> 'required',
+            'eventDate' => 'required',
             'eventDesc' => 'required',
             'opHour' => 'required',
             'section' => 'required',
@@ -41,6 +42,7 @@ class TicketController extends Controller
                 'image' => $imageName,
                 'name' => $request->eventName,
                 'location' => $request->eventLoc,
+                'date' => $request->eventDate,
                 'description' => $request->eventDesc,
                 'open_hour' => $request->opHour,
             ]);

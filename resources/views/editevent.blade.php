@@ -13,9 +13,12 @@
         <div class="card-body text-start d-block align-items-center justify-content-center px-5">
             <h1 class="fw-normal pt-3">{{ $event->name }}</h1>
             <h4 class="fw-lighter">{{ $event->location }}</h4>
+            @php
+                $date = date('d F Y', strtotime($event->date));
+            @endphp
+            <h4 class="fw-lighter">{{ $date }}</h4>
             <div class="pt-5">
                 <h3 class="fw-normal" style="border-left: solid 8px #26549280; padding-left: 12px">Deskripsi</h3>
-
                 <p class="fw-lighter">{!! str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br/>", $event->description) !!}</p>
             </div>
             <div class="pt-3">
