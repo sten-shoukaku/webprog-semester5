@@ -12,7 +12,7 @@
         <div class="card-body text-start d-block align-items-center justify-content-center px-5">
             <div class="pt-4">
                 <h3 class="fw-normal" style="border-left: solid 8px #26549280; padding-left: 12px">Tambahkan Event</h3>
-                <form action="/add/event/" method="POST" enctype="multipart/form-data" class="text-start pt-3">
+                <form action="/admin/event/add/event/" method="POST" enctype="multipart/form-data" class="text-start pt-3">
                     @csrf
                     <div class="pb-1">
                         <label for="banner" class="pb-2">Add Event Banner</label> <br>

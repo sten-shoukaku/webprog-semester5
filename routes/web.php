@@ -41,19 +41,19 @@ Route::get('/admin/home', [HomepageController::class, 'index_admin']);
 
 // Event
 // Add event
-Route::get('/add/event/', [TicketController::class, 'addEvent']);
-Route::post('/add/event/', [TicketController::class, 'addEventDetail']);
+Route::get('/admin/event/add/event/', [TicketController::class, 'addEvent']);
+Route::post('/admin/event/add/event/', [TicketController::class, 'addEventDetail']);
 
 // Edit Event
-Route::get('/edit/event/{eventId}', [TicketController::class, 'editEvent'])->name('editEvent');
+Route::get('/admin/event/edit/event/{eventId}', [TicketController::class, 'editEvent'])->name('editEvent');
 
 // Remove Event
-Route::post('/remove/event/{eventId}', [TicketController::class, 'removeEvent']);
+Route::post('/admin/event/remove/event/{eventId}', [TicketController::class, 'removeEvent']);
 
 // Section
 // Add Section
-Route::get('/add/section/{id}', [TicketController::class, 'addSection']);
-Route::post('/add/section/{id}', [TicketController::class, 'addSectionDetail']);
+Route::get('/admin/event/add/section/{id}', [TicketController::class, 'addSection']);
+Route::post('/admin/event/add/section/{id}', [TicketController::class, 'addSectionDetail']);
 
 // Remove Section
-Route::post('/remove/section/{eventId}/{sectionId}', [TicketController::class, 'removeSection']);
+Route::post('/admin/event/remove/section/{eventId}/{sectionId}', [TicketController::class, 'removeSection']);
