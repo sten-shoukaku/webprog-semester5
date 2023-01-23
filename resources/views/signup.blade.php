@@ -19,41 +19,69 @@
                             <h1 class="signin-text fw-semibold pb-3">Sign <span>up</span></h1>
                             <form action="/signup" method="POST" class="text-start px-4">
                                 @csrf
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+
+>>>>>>> f96b50ba6038562c3d0ac084dac444fcccd5a6f9
                                 <div class="pb-1">
                                     <label for="username" class="signin-text pb-2">Username</label> <br>
-                                    <input type="text" name="username" class="form-field px-3" id="username" value="">
+                                    <input type="text" name="username" class="form-field px-3 @error('username') is-invalid @enderror"
+                                    id="username" placeholder="username" required value="{{ old('username')}}">
+                                    @error('username')
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
+
+
+
                                 <div class="pb-1">
 =======
                                 <div class="pb-2">
 >>>>>>> Stashed changes
                                     <label for="email" class="signin-text pb-2">Email</label> <br>
-                                    <input type="email" name="email" class="form-field px-3" id="email" value="">
+                                    <input type="email" name="email" class="form-field px-3 @error('email') is-invalid @enderror"
+                                    id="email" placeholder="name@example.com" required value="{{ old('email')}}">
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
-                                <div class="pb-1">
+
+                                <div class="pb-2">
                                     <label for="password" class="signin-text pb-2">Password</label> <br>
-                                    <input type="password" name="password" class="form-field px-3" id="password" value="" >
+                                    <input type="password" name="password" class="form-field px-3 @error('password') is-invalid @enderror"
+                                    id="password" placeholder="Password" required >
                                     @error('password')
-                                        <div class="text-danger text-center">{{ $message }}</div>
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
                                     @enderror
-     
                                 </div>
-                                <div class="pb-1">
-                                    <label for="confirm-password" class="signin-text pb-2">Confirm Password</label> <br>
-                                    <input type="password" name="confirm-password" class="form-field px-3" id="confirm-password" value="" >
-                                    @error('confirm-password')
-                                        <div class="text-danger text-center">{{ $message }}</div>
-                                    @enderror
 
+                                <div class="pb-2">
+                                    <label for="confirmPassword" class="signin-text pb-2">Confirm Password</label> <br>
+                                    <input type="password" name="confirmPassword" class="form-field px-3 @error('confirmPassword') is-invalid @enderror"
+                                    id="confirmPassword" placeholder="Confirm Password" required>
+                                    @error('confirmPassword')
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
-                                <div class="pb-1">
-                                    <label for="phone-number" class="signin-text pb-2">Phone Number</label> <br>
-                                    <input type="text" name="phone-number" class="form-field px-3" id="phone-number" value="">
-                                    @error('phone-number')
-                                        <div class="text-danger text-center">{{ $message }}</div>
-                                    @enderror
 
+                                <div class="pb-2">
+                                    <label for="phone" class="signin-text pb-2">Phone Number</label> <br>
+                                    <input type="number" name="phone" class="form-field px-3 @error('phone') is-invalid @enderror"
+                                    id="phone"  placeholder="Phone Number" required value="{{ old('phone')}}">
+                                    @error('phone')
+                                        <div class="invalid-feedback">
+                                        {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="button-field signin-text py-3 pb-2">
