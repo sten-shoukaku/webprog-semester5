@@ -31,6 +31,12 @@
     height: 70vh;
 }
 
+#profileimgbg img
+{   
+    width: 70vw;
+    height: 70vh;
+}
+
 .profileusername
 {
     position: relative;
@@ -64,18 +70,22 @@
     position: relative;
     color: white;
     font-family: Roboto;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 }
 
-.profileinput
+.profileemail
 {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-top: 6vh;
+}
+
+.profilephone
+{
+    margin-top: 3vh;
+    margin-bottom: 6vh;
 }
 
 .profilebutton
 {
-    margin-top: 3vh;
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -101,12 +111,4 @@
     color: white;
     font-family: Andika;
     border-radius: 30px;
-}
-
-#error
-{
-    margin-top: 2vh;
-    position: relative;
-    color: red;
-    font-size: xx-small;
 }

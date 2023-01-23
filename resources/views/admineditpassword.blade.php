@@ -1,6 +1,6 @@
-@extends('layout.master_member')
+@extends('layout.master_admin')
 
-<link rel="stylesheet" href="{{URL::asset('css/editprofile.css')}}">
+<link rel="stylesheet" href="{{URL::asset('css/editpassword.css')}}">
 
 @section('title', 'Edit Password')
 
@@ -14,18 +14,18 @@
         <div class="profileusername">
             {{ $user->username }}
         </div>
-        <div id="profilemember">MEMBER</div>
+        <div id="profilemember">Admin</div>
         <div id="profileline"></div>
         <div class="profiledata">
-            <form action="{{url("/profile/editprofile")}}" method="POST">
+            <form action="{{url("/admin/profile/editpassword")}}" method="POST">
                 @csrf
-                <label for="email" class="profilelabel">Email</label>
+                <label for="newpassword" class="profilelabel">New Password</label>
                 <br>
-                <input type="text" class="profileinput" name="email">
+                <input type="text" class="profileinput" name="newpassword">
                 <br>
-                <label for="phone" class="profilelabel">Phone</label>
+                <label for="confirmnewpassword" class="profilelabel">Confirm New Password</label>
                 <br>
-                <input type="text" class="profileinput" name="phone">
+                <input type="text" class="profileinput" name="confirmnewpassword">
                 <div class="profilebutton">
                     <button id="editprofile" type="submit">CANCEL</button>
                     <button id="editpassword" type="submit">SAVE CHANGES</button>

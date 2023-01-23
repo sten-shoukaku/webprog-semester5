@@ -23,9 +23,16 @@ use App\Http\Controllers\WelcomeController;
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/signin', [WelcomeController::class, 'signin']);
 Route::get('/signup', [WelcomeController::class, 'signup']);
+
 Route::get('/profile', [UserController::class, 'profile']);
 Route::get('/profile/editpassword', [UserController::class, 'editpassword']);
+Route::post('/profile/editpassword', [UserController::class, 'changepassword']);
 Route::get('/profile/editprofile', [UserController::class, 'editprofile']);
+Route::post('/profile/editprofile', [UserController::class, 'changeprofile']);
+
+Route::get('/admin/profile', [UserController::class, 'adminprofile']);
+Route::get('/admin/profile/editpassword', [UserController::class, 'admineditpassword']);
+Route::post('/admin/profile/editpassword', [UserController::class, 'adminchangepassword']);
 
 Route::post('/signin', [WelcomeController::class, 'authentication']);
 Route::post('/signup', [WelcomeController::class, 'store']);
