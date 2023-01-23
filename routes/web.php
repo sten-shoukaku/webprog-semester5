@@ -6,7 +6,11 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\TicketController;
+=======
+use App\Http\Controllers\UserController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +26,9 @@ use App\Http\Controllers\TicketController;
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/signin', [WelcomeController::class, 'signin']);
 Route::get('/signup', [WelcomeController::class, 'signup']);
+Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile/editpassword', [UserController::class, 'editpassword']);
+Route::get('/profile/editprofile', [UserController::class, 'editprofile']);
 
 Route::post('/signin', [WelcomeController::class, 'authentication']);
 Route::post('/signup', [WelcomeController::class, 'store']);

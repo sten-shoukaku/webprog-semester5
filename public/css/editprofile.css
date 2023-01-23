@@ -1,0 +1,104 @@
+/* Font Style */
+/*  */
+@font-face {
+    font-family: Andika Basic;
+    src: url('/font/AndBasR.ttf');
+}
+
+@font-face {
+    font-family: Andika;
+    src: url('font/Andika-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('font/Roboto-Black.ttf');
+}
+
+#profilecontent
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#profileimgbg
+{
+    position: absolute;
+    width: 70vw;
+    height: 70vh;
+}
+
+.profileusername
+{
+    position: relative;
+    color: white;
+    font-size: 5vw;
+    font-family: Andika Basic;
+    font-weight: bold;
+}
+
+#profilemember
+{
+    margin-bottom: 1vh;
+    position: relative;
+    color: white;
+    font-family: Andika;
+    font-size: 1.5vw;
+}
+
+#profileline
+{
+    margin-bottom: 1vh;
+    width: 6.3vw;
+    position: relative;
+    border-style: solid;
+    border-color: white;
+    border-bottom: 0;
+}
+
+.profiledata
+{
+    position: relative;
+    color: white;
+    font-family: Roboto;
+    font-size: 1.2vw;
+}
+
+.profileinput
+{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.profilebutton
+{
+    margin-top: 3vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1vw;
+}
+
+#editprofile
+{
+    width: 15vw;
+    height: 6vh;
+    background-color: rgba(0, 0, 255, 0);
+    color: white;
+    border-color: white;
+    font-family: Andika;
+    border-radius: 30px;
+}
+
+#editpassword
+{
+    width: 15vw;
+    height: 6vh;
+    background-color: #DF3599;
+    color: white;
+    font-family: Andika;
+    border-radius: 30px;
+}

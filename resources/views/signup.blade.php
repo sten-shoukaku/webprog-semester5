@@ -19,11 +19,15 @@
                             <h1 class="signin-text fw-semibold pb-3">Sign <span>up</span></h1>
                             <form action="/signup" method="POST" class="text-start px-4">
                                 @csrf
+<<<<<<< Updated upstream
                                 <div class="pb-1">
                                     <label for="username" class="signin-text pb-2">Username</label> <br>
                                     <input type="text" name="username" class="form-field px-3" id="username" value="">
                                 </div>
                                 <div class="pb-1">
+=======
+                                <div class="pb-2">
+>>>>>>> Stashed changes
                                     <label for="email" class="signin-text pb-2">Email</label> <br>
                                     <input type="email" name="email" class="form-field px-3" id="email" value="">
                                 </div>

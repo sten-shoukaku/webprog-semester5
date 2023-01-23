@@ -10,7 +10,11 @@
     class="d-flex flex-wrap justify-content-center align-items-center"
     id="home-banner">
     <img
+<<<<<<< Updated upstream
         src="{{URL::asset('./images/homepage_banner.jpg')}}"
+=======
+        src="./images/homepage_banner.jpg"
+>>>>>>> Stashed changes
         alt=""
         style="width: 100vw">
     <div
@@ -38,7 +42,11 @@
     class="d-flex flex-wrap justify-content-center"
     style="padding: 3vw">
     <img
+<<<<<<< Updated upstream
         src="{{URL::asset('./images/upcoming_shows.png')}}"
+=======
+        src="./images/upcoming_shows.png"
+>>>>>>> Stashed changes
         alt="UPCOMING SHOWS"
         style="width: 30vw">
 </div>
@@ -47,12 +55,20 @@
     class="d-flex flex-wrap justify-content-center">
     @foreach ($events as $event)
     <a
+<<<<<<< Updated upstream
         href="/event/{{$event->id}}"
+=======
+        href=""
+>>>>>>> Stashed changes
         class="card m-4"
         style="width: 30vw; text-decoration: none; color: #000000">
         <img
             class="card-img-top"
+<<<<<<< Updated upstream
             src={{URL::asset($event->image)}}
+=======
+            src={{$event->image}}
+>>>>>>> Stashed changes
             alt={{$event->name}}>
         <div
             class="card-body">
