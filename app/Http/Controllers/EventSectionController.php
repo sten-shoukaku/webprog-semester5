@@ -15,8 +15,6 @@ class EventSectionController extends Controller
 
         $event = Event::find($id);
         $event->date = Carbon::createFromFormat('Y-m-d', $event->date)->format('d F Y');
-        $event->time = Carbon::createFromFormat('H:i:s', $event->time)->format('h.i');
-        $event->open_gate = Carbon::createFromFormat('H:i:s', $event->open_gate)->format('h.i');
 
         $section = EventSection::find($section_id);
 

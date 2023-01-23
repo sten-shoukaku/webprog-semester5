@@ -13,7 +13,7 @@
         class="card"
         style="width: 50vw; min-width: 50em">
         <img
-            src="{{URL::asset($event->image)}}"
+            src="{{URL::asset('images/'.$event->image)}}"
             alt=""
             class="card-image-top">
         <div
