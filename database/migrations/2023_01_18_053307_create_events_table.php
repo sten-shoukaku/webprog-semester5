@@ -18,8 +18,9 @@ class CreateEventsTable extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('location');
+            $table->date('date');
             $table->string('description');
-            $table->string('open_hour');         
+            $table->string('open_hour');
         });
     }
 
