@@ -11,7 +11,6 @@
     id="home-banner">
     <img
         src="{{URL::asset('./images/homepage_banner.jpg')}}"
-        src="./images/homepage_banner.jpg"
         alt=""
         style="width: 100vw">
     <div
@@ -40,7 +39,6 @@
     style="padding: 3vw">
     <img
         src="{{URL::asset('./images/upcoming_shows.png')}}"
-        src="./images/upcoming_shows.png"
         alt="UPCOMING SHOWS"
         style="width: 30vw">
 </div>
@@ -50,12 +48,11 @@
     @foreach ($events as $event)
     <a
         href="/event/{{$event->id}}"
-        href=""
         class="card m-4"
         style="width: 30vw; text-decoration: none; color: #000000">
         <img
             class="card-img-top"
-            src={{URL::asset($event->image)}}
+            src={{URL::asset('images/'.$event->image)}}
             src={{$event->image}}
             alt={{$event->name}}>
         <div

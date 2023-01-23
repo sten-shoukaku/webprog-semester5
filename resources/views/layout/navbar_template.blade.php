@@ -56,7 +56,7 @@
 
     <div
         class="d-flex flex-wrap justify-content-center position-absolute top-0 start-0"
-        style="z-index: 1">
+        style="z-index: 1; flex-direction: column">
         @yield('body')
     </div>
 

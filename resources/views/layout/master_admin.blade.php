@@ -3,7 +3,7 @@
 @section('menu1-main')
 <a
     class="navbar-link text-font-roboto {{(request()->is('admin/home*')) ? 'active' : ''}}"
-    href="/home">
+    href="/admin/home">
     HOME
 </a>
 @endsection
@@ -11,7 +11,7 @@
 @section('menu2-main')
 <a
     class="navbar-link text-font-roboto {{(request()->is('admin/event*')) ? 'active' : ''}}"
-    href="">
+    href="/admin/home/#upcomingShow">
     EVENT
 </a>
 @endsection
@@ -19,7 +19,7 @@
 @section('menu3-main')
 <a
     class="navbar-link text-font-roboto {{(request()->is('admin/order-history*')) ? 'active' : ''}}"
-    href="">
+    href="/add/event/">
     ADD EVENTS
 </a>
 @endsection
