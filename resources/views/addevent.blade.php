@@ -12,7 +12,7 @@
         <div class="card-body text-start d-block align-items-center justify-content-center px-5">
             <div class="pt-4">
                 <h3 class="fw-normal" style="border-left: solid 8px #26549280; padding-left: 12px">Tambahkan Event</h3>
-                <form action="#" method="POST" class="text-start pt-3">
+                <form action="/add/event/" method="POST" enctype="multipart/form-data" class="text-start pt-3">
                     @csrf
                     <div class="pb-1">
                         <label for="banner" class="pb-2">Add Event Banner</label> <br>
@@ -20,15 +20,19 @@
                     </div>
                     <div class="pb-1">
                         <label for="event-name" class="pb-2">Event Name</label> <br>
-                        <input type="text" name="event-name" class="form-field px-3" id="event-name" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
+                        <input type="text" name="eventName" class="form-field px-3" id="event-name" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
+                    </div>
+                    <div class="pb-1">
+                        <label for="event-name" class="pb-2">Location</label> <br>
+                        <input type="text" name="eventLoc" class="form-field px-3" id="event-loc" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
                     </div>
                     <div class="pb-1">
                         <label for="event-desc" class="pb-2">Add Description</label> <br>
-                        <input type="text" name="event-desc" class="form-field px-3" id="event-desc" value="" style="border: solid 1.5px #181818; width: 50vw; height: 10vh; border-radius: 3px">
+                        <textarea name="eventDesc" cols="102" rows="5"></textarea>
                     </div>
                     <div class="pb-1">
                         <label for="op-hour" class="pb-2">Opening Hours</label> <br>
-                        <input type="text" name="op-hour" class="form-field px-3" id="op-hour" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
+                        <textarea name="opHour" cols="102" rows="5"></textarea>
                     </div>
                     <div class="pb-1">
                         <label for="section" class="pb-2">Add Section</label> <br>
@@ -40,7 +44,7 @@
                     </div>
                     <div class="pb-1">
                         <label for="ticket-qty" class="pb-2">Ticket Quantity</label> <br>
-                        <input type="number" name="ticket-qty" class="form-field px-3" id="ticket-qty" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
+                        <input type="number" name="ticketQty" class="form-field px-3" id="ticket-qty" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
                     </div>
 
                     <div class="button-field pb-2 pt-5">

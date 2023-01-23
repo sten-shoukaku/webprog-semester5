@@ -12,7 +12,7 @@
         <div class="card-body text-start d-block align-items-center justify-content-center px-5">
             <div class="pt-4">
                 <h3 class="fw-normal" style="border-left: solid 8px #26549280; padding-left: 12px">Tambahkan Section</h3>
-                <form action="#" method="POST" class="text-start pt-3">
+                <form action="/add/section/{{ $eventId }}" method="POST" class="text-start pt-3">
                     @csrf
                     <div class="pb-1">
                         <label for="section" class="pb-2">Add Section</label> <br>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="pb-1">
                         <label for="ticket-qty" class="pb-2">Ticket Quantity</label> <br>
-                        <input type="number" name="ticket-qty" class="form-field px-3" id="ticket-qty" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
+                        <input type="number" name="ticketQty" class="form-field px-3" id="ticket-qty" value="" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px">
                     </div>
 
                     <div class="button-field pb-2 pt-5">
