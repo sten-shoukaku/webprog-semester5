@@ -11,7 +11,7 @@
 @section('menu2-main')
 <a
     class="navbar-link text-font-roboto {{(request()->is('event*')) ? 'active' : ''}}"
-    href="/home">
+    href="/home/#upcomingShow">
     EVENT
 </a>
 @endsection

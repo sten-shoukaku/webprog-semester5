@@ -32,11 +32,11 @@
                     </div>
                     <div class="pb-1">
                         <label for="event-desc" class="pb-2">Add Description</label> <br>
-                        <textarea name="eventDesc" cols="134" rows="5"></textarea>
+                        <textarea name="eventDesc" cols="100" rows="5" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px"></textarea>
                     </div>
                     <div class="pb-1">
                         <label for="op-hour" class="pb-2">Opening Hours</label> <br>
-                        <textarea name="opHour" cols="134" rows="5"></textarea>
+                        <textarea name="opHour" cols="100" rows="5" style="border: solid 1.5px #181818; width: 50vw; border-radius: 3px"></textarea>
                     </div>
                     <div class="pb-1">
                         <label for="section" class="pb-2">Add Section</label> <br>

@@ -65,7 +65,7 @@
 
                                 <div class="pb-2">
                                     <label for="phone" class="signin-text pb-2">Phone Number</label> <br>
-                                    <input type="number" name="phone" class="form-field px-3 @error('phone') is-invalid @enderror"
+                                    <input type="text" name="phone" class="form-field px-3 @error('phone') is-invalid @enderror"
                                     id="phone"  placeholder="Phone Number" required value="{{ old('phone')}}">
                                     @error('phone')
                                         <div class="invalid-feedback">

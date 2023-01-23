@@ -48,7 +48,7 @@
                                         <h4 class="pt-3 fw-normal">@currency($section->price) </h4>
                                     </div>
                                     <div class="col d-flex align-items-center justify-content-end pt-4">
-                                        <p class="px-4 pt-3" style="color: black; font-size: 15px">{{ $section->stock }} tiket</p>
+                                        <p class="px-4" style="color: black; font-size: 20px">{{ $section->stock }} tiket</p>
                                         <div class="button-field signin-text py-2 pb-2">
                                             <form action="/admin/event/remove/section/{{ $event->id }}/{{ $section->id }}" method="POST">
                                                 @csrf
@@ -70,7 +70,9 @@
                     </form>
                 </div>
                 <div class="button-field signin-text py-2 pb-2 px-3">
-                    <a href="/admin/event/add/section/{{ $event->id }}" class="btn" type="submit" id="" name="" style="background-color: #DF3599; border-radius: 50px; color: #fff; width: 250px">ADD SECTION</a>
+                    <form action="/admin/event/add/section/{{ $event->id }}">
+                        <button class="btn" type="submit" id="" name="" style="background-color: #DF3599; border-radius: 50px; color: #fff; width: 250px">ADD SECTION</button>
+                    </form>
                 </div>
             </div>
         </div>

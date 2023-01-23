@@ -19,24 +19,35 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-// test
-
+// Index
 Route::get('/', [WelcomeController::class, 'index']);
+
+// Sign In
 Route::get('/signin', [WelcomeController::class, 'signin']);
+Route::post('/signin', [WelcomeController::class, 'authentication']);
+
+//Sign Up
 Route::get('/signup', [WelcomeController::class, 'signup']);
+Route::post('/signup', [WelcomeController::class, 'store']);
+
+// Profile
 Route::get('/profile', [UserController::class, 'profile']);
 Route::get('/profile/editpassword', [UserController::class, 'editpassword']);
 Route::get('/profile/editprofile', [UserController::class, 'editprofile']);
 
-Route::post('/signin', [WelcomeController::class, 'authentication']);
-Route::post('/signup', [WelcomeController::class, 'store']);
-
+// Logout
 Route::post('/logout', [WelcomeController::class, 'logout']);
 
+
+// USER
 Route::get('/home', [HomepageController::class, 'index']);
+
+// Event
 Route::get('/event/{id}', [EventController::class, 'event_detail']);
 Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
 
+
+// ADMIN
 Route::get('/admin/home', [HomepageController::class, 'index_admin']);
 
 // Event
