@@ -11,7 +11,7 @@
 @section('menu2-main')
 <a
     class="navbar-link text-font-roboto {{(request()->is('event*')) ? 'active' : ''}}"
-    href="">
+    href="/home">
     EVENT
 </a>
 @endsection
@@ -27,7 +27,7 @@
 @section('menu1-side')
 <a
     class="navbar-link text-font-roboto {{(request()->is('profile*')) ? 'active' : ''}}"
-    href="">
+    href="/profile">
     PROFILE
 </a>
 @endsection
