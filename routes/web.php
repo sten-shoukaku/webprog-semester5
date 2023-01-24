@@ -19,6 +19,8 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
+//UI/UX Steffi Soeroredjo
+
 // Index
 Route::get('/', [WelcomeController::class, 'index']);
 
