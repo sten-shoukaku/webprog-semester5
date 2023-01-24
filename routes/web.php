@@ -46,7 +46,7 @@ Route::post('/logout', [WelcomeController::class, 'logout']);
 
 
 // USER
-Route::get('/home', [HomepageController::class, 'index']);
+Route::get('/home', [HomepageController::class, 'index'])->middleware('auth', 'member');
 
 // Event
 Route::get('/event/{id}', [EventController::class, 'event_detail']);
@@ -54,7 +54,7 @@ Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'o
 
 
 // ADMIN
-Route::get('/admin/home', [HomepageController::class, 'index_admin']);
+Route::get('/admin/home', [HomepageController::class, 'index_admin'])->middleware('auth', 'admin');
 
 // Event
 // Add event

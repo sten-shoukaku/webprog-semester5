@@ -4,18 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function profile() {
-        // $user = Auth::user()->id;
-        $user = DB::table("users")->where("id", "=", "1")->first();
+        $user = Auth::user();
         return view ("profile", compact("user"));
     }
 
     public function editpassword() {
-        // $user = Auth::user()->id;
-        $user = DB::table("users")->where("id", "=", "1")->first();
+        $user = Auth::user();
         return view("editpassword", compact("user"));
     }
 
@@ -24,18 +23,19 @@ class UserController extends Controller
             'newpassword'=> 'required|min:5|max:20',
             'confirmnewpassword'=> 'required|min:5|max:20'
         ]);
+
+        $id = Auth::user()->id;
         
-        DB::table('users')->where('id', '=', '1')->update([
-            "password" => $request->newpassword,
-            "confirmPassword" => $request->confirmnewpassword,
+        DB::table('users')->where('id', '=', $id)->update([
+            "password" => bcrypt($request->newpassword),
+            "confirmPassword" => bcrypt($request->confirmnewpassword),
         ]);
 
         return redirect("/profile");
     }
 
     public function editprofile() {
-        // $user = Auth::user()->id;
-        $user = DB::table("users")->where("id", "=", "1")->first();
+        $user = Auth::user();
         return view("editprofile", compact("user"));
     }
 
@@ -54,12 +54,12 @@ class UserController extends Controller
     }
 
     public function adminprofile() {
-        $user = DB::table("users")->where("id", "=", "2")->first();
+        $user = Auth::user();
         return view ("adminprofile", compact("user"));
     }
 
     public function admineditpassword() {
-        $user = DB::table("users")->where("id", "=", "2")->first();
+        $user = Auth::user();
         return view ("admineditpassword", compact("user"));
     }
 
@@ -70,8 +70,8 @@ class UserController extends Controller
         ]);
         
         DB::table('users')->where('id', '=', '2')->update([
-            "password" => $request->newpassword,
-            "confirmPassword" => $request->confirmnewpassword,
+            "password" => bcrypt($request->newpassword),
+            "confirmPassword" => bcrypt($request->confirmnewpassword),
         ]);
 
         return redirect("/admin/profile");
