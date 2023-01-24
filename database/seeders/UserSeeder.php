@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class UserSeeder extends Seeder
 {
@@ -14,22 +14,26 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            "username" => "Edbert",
-            "email" => "edbert.fangasadha@binus.ac.id",
-            "password" => "2440047873",
-            "confirmPassword" => "2440047873",
-            "phone" => "082365427900",
-            "role" => "member",
-        ]);
-
-        DB::table('users')->insert([
-            "username" => "admin",
-            "email" => "admin@gmail.com",
-            "password" => "2440047873",
-            "confirmPassword" => "2440047873",
-            "phone" => "082365427900",
-            "role" => "admin",
+        //
+        User::query()->insert([
+            [
+                "id"=> 1,
+                "username"=> "asalasal",
+                "email"=> "asalasal@gmail.com",
+                "password"=> bcrypt("asalasal"),
+                "confirmPassword"=> bcrypt("asalasal"),
+                "phone"=> "089675627226",
+                "role"=> "member",
+            ],
+            [
+                "id"=> 2,
+                "username"=> "Admin Ontick",
+                "email"=> "ontickadmin@gmail.com",
+                "password"=> bcrypt("admin"),
+                "confirmPassword"=>bcrypt("admin"),
+                "phone"=> "089675627226",
+                "role"=> "admin",
+            ]
         ]);
     }
 }

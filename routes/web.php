@@ -19,12 +19,18 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-// test
-
+// Index
 Route::get('/', [WelcomeController::class, 'index']);
-Route::get('/signin', [WelcomeController::class, 'signin']);
-Route::get('/signup', [WelcomeController::class, 'signup']);
 
+// Sign In
+Route::get('/signin', [WelcomeController::class, 'signin']);
+Route::post('/signin', [WelcomeController::class, 'authentication']);
+
+//Sign Up
+Route::get('/signup', [WelcomeController::class, 'signup']);
+Route::post('/signup', [WelcomeController::class, 'store']);
+
+// Profile
 Route::get('/profile', [UserController::class, 'profile']);
 Route::get('/profile/editpassword', [UserController::class, 'editpassword']);
 Route::post('/profile/editpassword', [UserController::class, 'changepassword']);
@@ -35,32 +41,36 @@ Route::get('/admin/profile', [UserController::class, 'adminprofile']);
 Route::get('/admin/profile/editpassword', [UserController::class, 'admineditpassword']);
 Route::post('/admin/profile/editpassword', [UserController::class, 'adminchangepassword']);
 
-Route::post('/signin', [WelcomeController::class, 'authentication']);
-Route::post('/signup', [WelcomeController::class, 'store']);
-
+// Logout
 Route::post('/logout', [WelcomeController::class, 'logout']);
 
+
+// USER
 Route::get('/home', [HomepageController::class, 'index']);
+
+// Event
 Route::get('/event/{id}', [EventController::class, 'event_detail']);
 Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
 
+
+// ADMIN
 Route::get('/admin/home', [HomepageController::class, 'index_admin']);
 
 // Event
 // Add event
-Route::get('/add/event/', [TicketController::class, 'addEvent']);
-Route::post('/add/event/', [TicketController::class, 'addEventDetail']);
+Route::get('/admin/event/add/event/', [TicketController::class, 'addEvent']);
+Route::post('/admin/event/add/event/', [TicketController::class, 'addEventDetail']);
 
 // Edit Event
-Route::get('/edit/event/{eventId}', [TicketController::class, 'editEvent'])->name('editEvent');
+Route::get('/admin/event/edit/event/{eventId}', [TicketController::class, 'editEvent'])->name('editEvent');
 
 // Remove Event
-Route::post('/remove/event/{eventId}', [TicketController::class, 'removeEvent']);
+Route::post('/admin/event/remove/event/{eventId}', [TicketController::class, 'removeEvent']);
 
 // Section
 // Add Section
-Route::get('/add/section/{id}', [TicketController::class, 'addSection']);
-Route::post('/add/section/{id}', [TicketController::class, 'addSectionDetail']);
+Route::get('/admin/event/add/section/{id}', [TicketController::class, 'addSection']);
+Route::post('/admin/event/add/section/{id}', [TicketController::class, 'addSectionDetail']);
 
 // Remove Section
-Route::post('/remove/section/{eventId}/{sectionId}', [TicketController::class, 'removeSection']);
+Route::post('/admin/event/remove/section/{eventId}/{sectionId}', [TicketController::class, 'removeSection']);

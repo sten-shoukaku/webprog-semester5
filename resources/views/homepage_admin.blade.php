@@ -48,7 +48,7 @@
     class="d-flex flex-wrap justify-content-center">
     @foreach ($events as $event)
     <a
-        href="/edit/event/{{$event->id}}"
+        href="/admin/event/edit/event/{{$event->id}}"
         class="card m-4"
         style="width: 30vw; text-decoration: none; color: #000000">
         <img

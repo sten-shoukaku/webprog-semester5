@@ -7,69 +7,35 @@
 
 @section('content')
 
-<div
-    class="d-flex flex-wrap justify-content-center"
-    style="margin-top: 10em; width: 100vw">
-    <div
-        class="card"
-        style="width: 50vw; min-width: 50em">
-        <img
-            src="{{URL::asset($event->image)}}"
-            alt=""
-            class="card-image-top">
-        <div
-            class="card-body"
-            style="padding: 2em 5em 2em 5em">
-            <h1
-                class="card-title text-font-roboto">
-                {{$event->name}}
-            </h1>
-            <p
-                class="card-title text-font-roboto text-thin"
-                style="font-size: 1.5em">
-                {{$event->location}}
-            </p>
-            <div
-                class="d-flex flex-wrap flex-direction-row"
-                style="margin-top: 4em; margin-bottom: 1em">
-                <div class="section-rectangle">
-                </div>
-                <h2
-                    class="card-title text-font-roboto"
-                    style="margin: initial">
-                    Deskripsi
-                </h2>
+<div class="d-flex flex-wrap justify-content-center align-items-center" id="home-banner" style="height: 225vh">
+    <img src="{{URL::asset('./images/homepage_banner.jpg')}}" alt="" style="width: 100vw; opacity: 0;">
+    <div class="card d-flex position-absolute justify-content-center" style="top: 15vh; max-width: 50vw">
+        <img src="{{URL::asset('./images/'.$event->image)}}" alt="UPCOMING SHOWS" class="card-img-top">
+        <div class="card-body text-start d-block align-items-center justify-content-center px-5">
+            <h1 class="fw-normal pt-3">{{ $event->name }}</h1>
+            <h4 class="fw-lighter">{{ $event->location }}</h4>
+            @php
+                $date = date('d F Y', strtotime($event->date));
+            @endphp
+            <h4 class="fw-lighter">{{ $date }}</h4>
+            <div class="pt-5">
+                <h3 class="fw-normal" style="border-left: solid 8px #26549280; padding-left: 12px">Deskripsi</h3>
+                <p class="fw-lighter">{!! str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br/>", $event->description) !!}</p>
             </div>
-            <p
-                class="card-text text-font-roboto text-thin">
-                {{$event->description}}
-            </p>
-            <div
-                class="d-flex flex-wrap jam-buka-rectangle"
-                style="margin-top: 2em">
-                <h4
-                    class="card-title text-font-roboto"
-                    style="margin-left: 1.5em">
-                    Jam Buka
-                </h3>
-                <ul>
-                    <li
-                        class="card-text text-font-roboto text-thin">
-                        Jadwal konser: {{$event->date}} ({{$event->time}} WIB)
-                    </li>
-                    <li
-                        class="card-text text-font-roboto text-thin">
-                        Open gate: {{$event->open_gate}} WIB
-                    </li>
-                    <li
-                        class="card-text text-font-roboto text-thin">
-                        Durasi: {{$event->duration}} Jam
-                    </li>
-                    <li
-                        class="card-text text-font-roboto text-thin">
-                        Venue: {{$event->venue}}, {{$event->location}}
-                    </li>
-                </ul>
+            <div class="pt-3">
+                <div class="background" style="background-color: #BECBDC80">
+                    <div class="p-3">
+                        <h5 class="px-3 pt-3 fw-normal">Jam Buka</h5>
+                        <ul class="fw-lighter">
+                            @php
+                                $opHour = explode("\n", $event->open_hour)
+                            @endphp
+                            @foreach ($opHour as $op)
+                                <li>{{ $op }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div
                 class="d-flex flex-wrap flex-direction-row"
@@ -96,7 +62,7 @@
                     <h5
                         class="card-title text-font-roboto"
                         style="font-size: 1.2em; margin: auto">
-                        IDR {{number_format($section->price, 0, ',', '.')}}
+                        @currency($section->price)
                     </h5>
                 </div>
                 <hr
@@ -143,7 +109,7 @@
                             class="card-text text-font-roboto"
                             id="total_price"
                             style="text-align: right">
-                            IDR {{number_format($section->price, 0, ',', '.')}}
+                            @currency($section->price)
                         </h5>
                         <div
                             class="container-fluid d-flex flex-wrap"
