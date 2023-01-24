@@ -17,4 +17,12 @@ class EventController extends Controller
 
         return view('event_detail', compact('event', 'sections'));
     }
+
+    public function vieworder() {
+        $id = Auth::user->id();
+        $transaction = DB::table('transactions')->join('users', 'users.id', '=', 'transactions.userId')
+        ->join('events', 'events.id', '=', 'transactions.eventId')
+        ->join('event_sections', 'event_sections', '=', 'transactions.sectionId')->where('userId', '=', $id)->get();
+        return view('vieworder', compact('transaction'));
+    }
 }

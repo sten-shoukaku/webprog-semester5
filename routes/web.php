@@ -52,6 +52,9 @@ Route::get('/home', [HomepageController::class, 'index'])->middleware('auth', 'm
 Route::get('/event/{id}', [EventController::class, 'event_detail']);
 Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
 
+// View Order
+Route::get('/vieworder', [EventController::class, 'vieworder']);
+
 
 // ADMIN
 Route::get('/admin/home', [HomepageController::class, 'index_admin'])->middleware('auth', 'admin');
