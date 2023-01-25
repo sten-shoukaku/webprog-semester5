@@ -48,7 +48,7 @@ class UserController extends Controller
             'phone'=> 'required|min:10|max:13'
         ]);
         
-        DB::table('users')->where('id', '=', $id)->update([
+        DB::table('users')->where('id', '=', id)->update([
             "email" => $request->email,
             "phone" => $request->phone,
         ]);
@@ -69,7 +69,7 @@ class UserController extends Controller
     public function adminchangepassword(Request $request) {
 
         $id = Auth::user()->id;
-
+        
         $dataValid = $request->validate([
             'newpassword'=> 'required|min:5|max:20',
             'confirmnewpassword'=> 'required|min:5|max:20'
