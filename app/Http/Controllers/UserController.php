@@ -45,7 +45,7 @@ class UserController extends Controller
             'phone'=> 'required|min:10|max:13'
         ]);
         
-        DB::table('users')->where('id', '=', $id)->update([
+        DB::table('users')->where('id', '=', '1')->update([
             "email" => $request->email,
             "phone" => $request->phone,
         ]);
@@ -69,7 +69,7 @@ class UserController extends Controller
             'confirmnewpassword'=> 'required|min:5|max:20'
         ]);
         
-        DB::table('users')->where('id', '=', $id)->update([
+        DB::table('users')->where('id', '=', '2')->update([
             "password" => bcrypt($request->newpassword),
             "confirmPassword" => bcrypt($request->confirmnewpassword),
         ]);
