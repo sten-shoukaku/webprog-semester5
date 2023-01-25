@@ -11,15 +11,15 @@
 @section('menu2-main')
 <a
     class="navbar-link text-font-roboto {{(request()->is('event*')) ? 'active' : ''}}"
-    href="">
+    href="/home/#upcomingShow">
     EVENT
 </a>
 @endsection
 
 @section('menu3-main')
 <a
-    class="navbar-link text-font-roboto {{(request()->is('order-history*')) ? 'active' : ''}}"
-    href="">
+    class="navbar-link text-font-roboto {{(request()->is('vieworder*')) ? 'active' : ''}}"
+    href="/vieworder">
     VIEW ORDER
 </a>
 @endsection
@@ -27,7 +27,7 @@
 @section('menu1-side')
 <a
     class="navbar-link text-font-roboto {{(request()->is('profile*')) ? 'active' : ''}}"
-    href="">
+    href="/profile">
     PROFILE
 </a>
 @endsection

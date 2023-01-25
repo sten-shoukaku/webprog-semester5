@@ -94,17 +94,21 @@
 
 .form-field {
     color: #fff;
-    width: 100%; height: 35px;
+    width: 100%; height: 30px;
     border: 0; border-radius: 50px;
     background-color: #D9D9D933;
 }
 
 .button-field button {
-    color: #fff; height: 35px;
+    color: #fff; height: 30px;
     border: 0; border-radius: 50px;
     background-color: #DF3599;
 }
 
 .button-field button:hover {
     background-color: #9b1965;
+}
+
+#submit-text {
+    font-size: smaller;
 }

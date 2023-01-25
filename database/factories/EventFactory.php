@@ -16,9 +16,10 @@ class EventFactory extends Factory
         return [
             'name' => $this->faker->words(3, True),
             'image' => 'images/event_template.png',
-            'price' => $this->faker->numberBetween(100000, 10000000),
+            'description' => $this->faker->sentence(),
             'date' => $this->faker->date('Y-m-d'),
-            'location' => $this->faker->word()
+            'open_hour' => $this->faker->sentence(),
+            'location' => $this->faker->word(),
         ];
     }
 }
