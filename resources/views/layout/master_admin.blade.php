@@ -27,7 +27,7 @@
 @section('menu1-side')
 <a
     class="navbar-link text-font-roboto {{(request()->is('admin/profile*')) ? 'active' : ''}}"
-    href="">
+    href="/admin/profile">
     PROFILE
 </a>
 @endsection
