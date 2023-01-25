@@ -47,7 +47,7 @@ class DetailPemesananController extends Controller
         $rules = [
             'namaLengkap' => 'required|min:3|max:20',
             'email' => 'required|email:dns',
-            'nomorPonsel' => 'required',
+            'nomorPonsel' => 'required:min:10|max:13',
             'nomorKTP' => 'required',
         ];
 
