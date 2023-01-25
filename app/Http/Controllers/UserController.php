@@ -40,9 +40,6 @@ class UserController extends Controller
     }
 
     public function changeprofile(Request $request) {
-
-        $id = Auth::user()->id;
-
         $dataValid = $request->validate([
             'email'=> 'required|email:dns|unique:users',
             'phone'=> 'required|min:10|max:13'
@@ -67,9 +64,6 @@ class UserController extends Controller
     }
 
     public function adminchangepassword(Request $request) {
-
-        $id = Auth::user()->id;
-        
         $dataValid = $request->validate([
             'newpassword'=> 'required|min:5|max:20',
             'confirmnewpassword'=> 'required|min:5|max:20'
