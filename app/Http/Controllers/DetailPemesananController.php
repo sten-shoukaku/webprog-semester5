@@ -19,7 +19,7 @@ class DetailPemesananController extends Controller
         $quantity = $request->quantity;
         $total_price = $section->price * $quantity;
 
-        $rules = [
+        $rules = [  
             'quantity' => 'required|integer|min:1|max:'.$section->stock,
         ];
 
@@ -35,7 +35,7 @@ class DetailPemesananController extends Controller
         } else {
             return view('detailpemesanan', compact('event', 'section', 'quantity', 'total_price'));
         }
-
+        
     }
 
     public function order(Request $request){
@@ -44,10 +44,10 @@ class DetailPemesananController extends Controller
         $nomorPonsel = $request->nomor_ponsel;
         $nomorKTP = $request->nomor_ktp;
 
-        $rules = [
-            'namaLengkap' => 'required|min:3|max:20',
-            'email' => 'required|email:dns',
-            'nomorPonsel' => 'required:min:10|max:13',
+        $rules = [  
+            'namaLengkap' => 'required',
+            'email' => 'required',
+            'nomorPonsel' => 'required',
             'nomorKTP' => 'required',
         ];
 
@@ -79,6 +79,6 @@ class DetailPemesananController extends Controller
             ]);
 
             return redirect('/vieworder');
-        }
+        }     
     }
 }
