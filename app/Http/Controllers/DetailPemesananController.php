@@ -19,7 +19,7 @@ class DetailPemesananController extends Controller
         $quantity = $request->quantity;
         $total_price = $section->price * $quantity;
 
-        $rules = [  
+        $rules = [
             'quantity' => 'required|integer|min:1|max:'.$section->stock,
         ];
 
@@ -35,50 +35,42 @@ class DetailPemesananController extends Controller
         } else {
             return view('detailpemesanan', compact('event', 'section', 'quantity', 'total_price'));
         }
-        
+
     }
 
     public function order(Request $request){
-        $namaLengkap = $request->nama_lengkap;
-        $email = $request->email;
-        $nomorPonsel = $request->nomor_ponsel;
-        $nomorKTP = $request->nomor_ktp;
+        $request->validate([
+            'nama_lengkap' => ['required', 'max:255'],
+            'email' => ['required', 'email'],
+            'nomor_ponsel' => ['required'],
+            'nomor_ktp' => ['required']
+        ]);
 
-        $rules = [  
-            'namaLengkap' => 'required',
-            'email' => 'required',
-            'nomorPonsel' => 'required',
-            'nomorKTP' => 'required',
-        ];
+        $user_id = Auth::user()->id;
 
-        $messages = [
-            'namaLengkap.required' => 'Data Nama Lengkap harus diisi.',
-            'email.required' => 'Data email harus diisi.',
-            'nomorPonsel.required' => 'Data Nomor Ponsel harus diisi.',
-            'nomorKTP.required' => 'Data KTP harus diisi.',
-        ];
+        $stock = EventSection::find($request->sectionId)->stock;
 
-        $validator = Validator::make($request->all(), $rules, $messages);
+        DB::table('event_sections')
+            ->where(
+                'id',
+                '=',
+                $request->sectionId
+            )
+            ->update(
+                [
+                    'stock' => (int)$stock - (int)$request->quantity
+                ]
+            );
 
-        if($validator->fails()) {
-            return back()->withInput()->withErrors($validator);
-        } else {
-            $userId = Auth::user()->id;
+        DB::table('transactions')->insert([
+            'eventId' => $request->eventId,
+            'sectionId' => $request->sectionId,
+            'userId' => $user_id,
+            'quantity' => $request->quantity,
+            'total_price' => $request->totalPrice,
+            'created_at' => Carbon::now()
+        ]);
 
-            $oldstock = DB::table('event_sections')->where('id', '=', $request->sectionId)->sum('stock');
-            $newstock = $oldstock - $request->quantity;
-            DB::table('event_sections')->where('id',$request->sectionId)->update(['stock' => $newstock]);
-
-            DB::table('transactions')->insert([
-                'eventId' => $request->eventId,
-                'sectionId' => $request->sectionId,
-                'userId' => $userId,
-                'quantity' => $request->quantity,
-                'total_price' => $request->totalPrice,
-                'created_at' => Carbon::now(),
-            ]);
-
-            return redirect('/vieworder');
-        }     
+        return redirect('/vieworder');
     }
 }
