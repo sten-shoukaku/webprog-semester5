@@ -10,7 +10,7 @@
 <div class="d-flex flex-wrap justify-content-center align-items-center" id="home-banner" style="height: 225vh">
     <img src="{{URL::asset('./images/homepage_banner.jpg')}}" alt="" style="width: 100vw; opacity: 0;">
     <div class="card d-flex position-absolute justify-content-center" style="top: 15vh; max-width: 50vw">
-        <img src="{{asset('storage/images/'.$event->image)}}" alt="UPCOMING SHOWS" class="card-img-top">
+        <img src="{{URL::asset('./images/'.$event->image)}}" alt="UPCOMING SHOWS" class="card-img-top">
         <div class="card-body text-start d-block align-items-center justify-content-center px-5">
             <h1 class="fw-normal pt-3">{{ $event->name }}</h1>
             <h4 class="fw-lighter">{{ $event->location }}</h4>
