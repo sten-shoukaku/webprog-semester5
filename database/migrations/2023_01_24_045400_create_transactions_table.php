@@ -15,9 +15,11 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('eventId');
-            $table->unsignedInteger('sectionId');
-            $table->unsignedInteger('userId');
+            $table->foreignId('eventId');
+            $table->foreignId('sectionId');
+            $table->foreignId('userId');
+            $table->integer('quantity');
+            $table->integer('total_price');
             $table->timestamps();
             $table->foreign('eventId')->references('id')->on('events')->onDelete('cascade');
             $table->foreign('sectionId')->references('id')->on('event_sections')->onDelete('cascade');

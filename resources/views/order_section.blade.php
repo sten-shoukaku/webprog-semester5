@@ -68,8 +68,8 @@
                 <hr
                     style="width: 100%; color: #969595">
                 <form
-                    action=""
-                    method="POST"
+                    action="/orderDetail"
+                    method="GET"
                     style="width: 100%">
                     @csrf
                     <input
@@ -91,6 +91,7 @@
                         <input
                             type="hidden"
                             id="price"
+                            name="price"
                             value={{$section->price}}>
                         <input
                             class="text-font-roboto"
@@ -100,6 +101,9 @@
                             name="quantity"
                             id="quantity_input"
                             style="border-radius: 0.5em; width: 5em; margin-left: 2em; text-align: right">
+                            @if($errors->any())
+                                <p class="text-danger text-left mt-3">{{ $errors->first() }}</p>
+                            @endif
                         <p
                             class="card-text text-font-roboto text-thin"
                             style="text-align: right; margin: 2em 0em 0em 0em">
@@ -118,7 +122,8 @@
                                 style="display: flex; flex-wrap: wrap; flex-direction: row">
                                 <button
                                     class="rounded-pill btn-section-back text-font-roboto"
-                                    type="submit">
+                                    type="submit"
+                                    formaction="/event/{{$event->id}}">
                                     KEMBALI
                                 </button>
                                 <button
