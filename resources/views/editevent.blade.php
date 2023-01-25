@@ -9,7 +9,7 @@
 <div class="d-flex flex-wrap justify-content-center align-items-center" id="home-banner" style="height: 225vh">
     <img src="{{URL::asset('./images/homepage_banner.jpg')}}" alt="" style="width: 100vw; opacity: 0;">
     <div class="card d-flex position-absolute justify-content-center" style="top: 15vh; max-width: 50vw">
-        <img src="{{URL::asset('./images/'.$event->image)}}" alt="UPCOMING SHOWS" class="card-img-top">
+        <img src="{{asset('storage/images/'.$event->image)}}" alt="UPCOMING SHOWS" class="card-img-top">
         <div class="card-body text-start d-block align-items-center justify-content-center px-5">
             <h1 class="fw-normal pt-3">{{ $event->name }}</h1>
             <h4 class="fw-lighter">{{ $event->location }}</h4>
@@ -53,7 +53,7 @@
                                             <form action="/admin/event/remove/section/{{ $event->id }}/{{ $section->id }}" method="POST">
                                                 @csrf
                                                 <button class="btn" type="submit" id="" name="" style="background-color: #DF3599; border-radius: 50px; color: #fff; width: 170px">REMOVE SECTION</button>
-                                            </form>    
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div> 
+            </div>
             <div class="py-5 d-flex justify-content-center">
                 <div class="button-field signin-text py-2 pb-2 px-3">
                     <form action="/admin/event/remove/event/{{ $event->id }}" method="POST">
