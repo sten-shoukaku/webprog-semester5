@@ -73,7 +73,7 @@
 
                 <div class="d-flex flex-wrap flex-column form-content">
                     <div class="d-flex" style="max-width: 25rem; border-bottom: 0.1rem solid; padding-bottom: 1rem; margin-bottom: 1rem">
-                        <img src="{{URL::asset('./images/'.$event->image)}}" alt="Concert Picture" style="max-height: 5rem; margin: 0.1rem 1rem">
+                        <img src="{{asset('storage/images/'.$event->image)}}" alt="Concert Picture" style="max-height: 5rem; margin: 0.1rem 1rem">
                         <h5 style="margin: 0rem 0.5rem; font-weight:bold">{{ $event->name }}</h5>
                     </div>
                     <div class="d-flex flex-column" style="max-width: 25rem; border-bottom: 0.1rem solid; padding-bottom: 1rem; margin-bottom: 1rem">
