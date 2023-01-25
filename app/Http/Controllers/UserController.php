@@ -40,12 +40,15 @@ class UserController extends Controller
     }
 
     public function changeprofile(Request $request) {
+
+        $id = Auth::user()->id;
+
         $dataValid = $request->validate([
             'email'=> 'required|email:dns|unique:users',
             'phone'=> 'required|min:10|max:13'
         ]);
         
-        DB::table('users')->where('id', '=', '1')->update([
+        DB::table('users')->where('id', '=', id)->update([
             "email" => $request->email,
             "phone" => $request->phone,
         ]);
@@ -64,12 +67,15 @@ class UserController extends Controller
     }
 
     public function adminchangepassword(Request $request) {
+
+        $id = Auth::user()->id;
+        
         $dataValid = $request->validate([
             'newpassword'=> 'required|min:5|max:20',
             'confirmnewpassword'=> 'required|min:5|max:20'
         ]);
         
-        DB::table('users')->where('id', '=', '2')->update([
+        DB::table('users')->where('id', '=', $id)->update([
             "password" => bcrypt($request->newpassword),
             "confirmPassword" => bcrypt($request->confirmnewpassword),
         ]);
