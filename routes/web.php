@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailPemesananController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventSectionController;
 use App\Http\Controllers\HomepageController;
@@ -52,7 +53,11 @@ Route::get('/home', [HomepageController::class, 'index'])->middleware('auth', 'm
 
 // Event
 Route::get('/event/{id}', [EventController::class, 'event_detail']);
-Route::post('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
+Route::get('/event/{id}/order/{section_id}', [EventSectionController::class, 'order_section']);
+
+// Order
+Route::get('/orderDetail', [DetailPemesananController::class, 'index']);
+Route::post('/orderDetail', [DetailPemesananController::class, 'order']);
 
 // View Order
 Route::get('/vieworder', [EventController::class, 'vieworder']);

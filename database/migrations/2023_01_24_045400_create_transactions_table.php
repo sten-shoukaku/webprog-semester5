@@ -18,6 +18,8 @@ class CreateTransactionsTable extends Migration
             $table->foreignId('eventId');
             $table->foreignId('sectionId');
             $table->foreignId('userId');
+            $table->integer('quantity');
+            $table->integer('total_price');
             $table->timestamps();
             $table->foreign('eventId')->references('id')->on('events')->onDelete('cascade');
             $table->foreign('sectionId')->references('id')->on('event_sections')->onDelete('cascade');

@@ -18,7 +18,7 @@
 
 @section('menu3-main')
 <a
-    class="navbar-link text-font-roboto {{(request()->is('order-history*')) ? 'active' : ''}}"
+    class="navbar-link text-font-roboto {{(request()->is('vieworder*')) ? 'active' : ''}}"
     href="/vieworder">
     VIEW ORDER
 </a>

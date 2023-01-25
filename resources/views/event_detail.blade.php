@@ -82,7 +82,7 @@
                                     @endif
                                     <form
                                         action="/event/{{$event->id}}/order/{{$section->id}}"
-                                        method="POST"
+                                        method="GET"
                                         style="margin: auto">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$section->id}}">
