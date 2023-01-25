@@ -26,7 +26,7 @@ use App\Http\Controllers\WelcomeController;
 Route::get('/', [WelcomeController::class, 'index']);
 
 // Sign In
-Route::get('/signin', [WelcomeController::class, 'signin']);
+Route::get('/signin', [WelcomeController::class, 'signin'])->name('login');
 Route::post('/signin', [WelcomeController::class, 'authentication']);
 
 //Sign Up
