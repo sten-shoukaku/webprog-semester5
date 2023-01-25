@@ -36,7 +36,7 @@ class TicketController extends Controller
         } else {
             $image = $request->file('banner');
             $imageName = $image->getClientOriginalName();
-            Storage::putFileAs('public/images/', $image, $imageName);
+            Storage::putFileAs('public/images', $image, $imageName);
 
             DB::table('events')->insert([
                 'image' => $imageName,
