@@ -46,7 +46,6 @@ class UserController extends Controller
         ]);
         
         DB::table('users')->where('id', '=', $id)->update([
-        DB::table('users')->where('id', '=', '1')->update([
             "email" => $request->email,
             "phone" => $request->phone,
         ]);
