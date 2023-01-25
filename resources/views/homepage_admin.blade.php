@@ -58,15 +58,15 @@
         <div
             class="card-body">
             <div
-                style="height: 8em">
+                style="height: 12em">
                 <h5
                     class="card-title"
-                    style="font-size: 40px; margin: 0em">
+                    style="font-size: 2em; margin: 0em">
                     {{$event->name}}
                 </h5>
                 <p
                     class="text-font-roboto text-thin"
-                    style="font-size: 25px; margin: 0em">
+                    style="font-size: 1.5em; margin: 0em">
                     {{$event->location}}
                 </p>
 
@@ -75,7 +75,7 @@
                 @endphp
                 <p
                     class="text-font-roboto text-thin"
-                    style="font-size: 20px; margin: 0em">
+                    style="font-size: 1.2em; margin: 0em">
                     {{$date}}
                 </p>
             </div>
