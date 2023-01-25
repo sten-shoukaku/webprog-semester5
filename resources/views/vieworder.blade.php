@@ -21,7 +21,7 @@
                             ID: {{ $data->id }}</p>
                         <div class="d-flex"
                             style="max-width: 35rem; border-bottom: 0.1rem solid; padding-bottom: 1rem; margin-bottom: 1rem">
-                            <img src="{{ URL::asset('./images/'.$data->image) }}" alt="Concert Picture"
+                            <img src={{URL::asset('storage/'.$data->image)}} alt="Concert Picture"
                                 style="max-height: 5rem; margin: 0.1rem 1rem">
                             <div class="d-flex flex-column">
                                 <h5 style="margin: 0.1rem 1rem; font-weight:bold">{{ $data->eventName }}</h5>

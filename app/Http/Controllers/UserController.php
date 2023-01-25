@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -19,19 +20,28 @@ class UserController extends Controller
     }
 
     public function changepassword(Request $request) {
-        $dataValid = $request->validate([
-            'newpassword'=> 'required|min:5|max:20',
-            'confirmnewpassword'=> 'required|min:5|max:20'
-        ]);
 
-        $id = Auth::user()->id;
-        
-        DB::table('users')->where('id', '=', $id)->update([
-            "password" => bcrypt($request->newpassword),
-            "confirmPassword" => bcrypt($request->confirmnewpassword),
-        ]);
+        $user = Auth::user();
 
-        return redirect("/profile");
+        // $dataValid = $request->validate([
+        //     'oldpassword' => 'required',
+        //     'newpassword'=> 'required|min:5|max:20',
+        //     'confirmnewpassword'=> 'required|min:5|max:20'
+        // ]);
+
+        return dump(Hash::check($user->password, $request->oldpassword));
+
+        if ($user->password == bcrypt($request->oldpassword))
+        {
+            return dump($user->password, 2440047873, []);
+        }
+
+        // DB::table('users')->where('id', '=', $user->id)->update([
+        //     "password" => bcrypt($request->newpassword),
+        //     "confirmPassword" => bcrypt($request->confirmnewpassword),
+        // ]);
+
+        // return redirect("/profile");
     }
 
     public function editprofile() {
@@ -68,18 +78,21 @@ class UserController extends Controller
 
     public function adminchangepassword(Request $request) {
 
-        $id = Auth::user()->id;
-        
-        $dataValid = $request->validate([
-            'newpassword'=> 'required|min:5|max:20',
-            'confirmnewpassword'=> 'required|min:5|max:20'
-        ]);
-        
-        DB::table('users')->where('id', '=', $id)->update([
-            "password" => bcrypt($request->newpassword),
-            "confirmPassword" => bcrypt($request->confirmnewpassword),
-        ]);
+        $user = Auth::user();
 
-        return redirect("/admin/profile");
+        return dump($request);
+
+        // $dataValid = $request->validate([
+        //     'oldpassword' => 'required',
+        //     'newpassword'=> 'required|min:5|max:20',
+        //     'confirmnewpassword'=> 'required|min:5|max:20'
+        // ]);
+        
+        // DB::table('users')->where('id', '=', $user->id)->update([
+        //     "password" => bcrypt($request->newpassword),
+        //     "confirmPassword" => bcrypt($request->confirmnewpassword),
+        // ]);
+
+        // return redirect("/admin/profile");
     }
 }

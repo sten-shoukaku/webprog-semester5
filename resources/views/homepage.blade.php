@@ -53,7 +53,7 @@
         style="width: 30vw; text-decoration: none; color: #000000">
         <img
             class="card-img-top"
-            src={{asset('storage/images/'.$event->image)}}
+            src={{URL::asset('storage/'.$event->image)}}
             alt={{$event->name}}>
         <div
             class="card-body">
