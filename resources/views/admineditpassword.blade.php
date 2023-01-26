@@ -19,6 +19,10 @@
         <div class="profiledata">
             <form action="{{url("/admin/profile/editpassword")}}" method="POST">
                 @csrf
+                <label for="oldpassword class="profilelabel">Old Password</label>
+                <br>
+                <input type="text" class="profileinput" name="oldpassword">
+                <br>
                 <label for="newpassword" class="profilelabel">New Password</label>
                 <br>
                 <input type="text" class="profileinput" name="newpassword">
