@@ -9,9 +9,31 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 
-
 class WelcomeController extends Controller
 {
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // UI/UX Developer, Director : 2440039146 Steffi Soeroredjo, www.figma.com/file/rjOYJhQ47uy37GNg2ghn96/On-Tick?node-id=0%3A1&t=jtGy9w7TvMeSTPuC-0
+    // Github Controller/Mentor and Front End Developer : 2440004653 Stanly Bianconeri
+    // Front End Developer : 2440003726 Giancarlo Casanova, 2440021376 Denzel Caesarian Iswanto Suhardjo
+    // Back End Developer and Web Hosting : 2440029744 Ferdinandus Dipokusuma Tandiono
+    // Back End Developer : 2440003991 Aldo Anthonius, 2440047873 Edbert Felix Fangasadha
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+
     public function index() {
         return view('index');
     }
